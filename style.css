@@ -1,0 +1,396 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap");
+
+/* Definição de variáveis globais */
+:root {
+  /* Cores */
+  --color-primary: #ff9900; /* Laranja principal */
+  --color-secondary: #213e5b; /* Azul escuro */
+  --color-text-light: #fff; /* Texto claro */
+  --color-text-dark: #12263a; /* Texto escuro */
+  --color-background: #071019; /* Fundo escuro (footer) */
+
+  /* Fontes */
+  --font-family-base: "Roboto", Arial, Helvetica, sans-serif;
+  --font-size-base: 16px;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+
+  /* Espaçamentos */
+  --padding-base: 20px;
+  --padding-large: 50px;
+
+  /* Botões */
+  --btn-padding: 10px 20px;
+  --btn-border-radius: 5px;
+  --btn-hover-bg: #ffca3a;
+  --btn-hover-color: #fff;
+
+  /* Outros */
+  --container-max-width: 1200px;
+  --transition-base: all 0.3s ease;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  background-color: #213e5b;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* HEADER */
+header {
+  background-color: #213e5b;
+  padding: 30px 20px;
+}
+
+.header-logo {
+  display: inline-block;
+}
+
+.logo {
+  width: 200px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+header nav ul li a {
+  color: #fff;
+  font-weight: normal;
+  transition: color 0.3s;
+  font-size: 1.1rem;
+}
+
+header nav ul li a:hover {
+  color: #ff9900;
+}
+
+header .btn-download {
+  background-color: transparent;
+  border: 2px solid #ff9900;
+  color: #ff9900;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 5px;
+  /* display: inline-block; */
+  text-align: center; /* Centraliza o texto no botão */
+  width: 100%; /* Ocupa a mesma largura dos outros itens */
+  box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+header .btn-download:hover {
+  background-color: #ffca3a;
+  color: #fff;
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 50px; /* Adicione padding horizontal ao container */
+}
+
+/* HERO SECTION */
+#hero {
+  padding: 50px;
+  position: relative;
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/hero-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-stact;
+  /* min-height: 70vh; */
+}
+
+#hero .hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 450px;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: bold;
+  max-width: 500px;
+}
+
+.hero-text h2 span {
+  color: #ff9900;
+}
+
+.hero-text .btn-hero {
+  padding: 15px 30px;
+  background-color: #ff9900;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+  width: 200px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.hero-text .btn-hero:hover {
+  background-color: #ffcc00;
+  color: #fff;
+}
+
+.hero-image {
+  align-self: center;
+}
+
+.hero-image img {
+  width: 300px;
+}
+
+/* SEÇÃO SOBRE */
+#sobre {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding-large) 0;
+}
+
+.sobre-content {
+  display: flex;
+  width: 100%;
+}
+
+.sobre-image {
+  flex: 1;
+  position: relative;
+}
+
+.sobre-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sobre-text {
+  flex: 1;
+  background-image: url("images/bg-yellow.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--color-text-dark);
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sobre-text h2 {
+  font-weight: var(--font-weight-bold);
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: -0.5px;
+  margin-bottom: 15px;
+}
+
+.sobre-text p {
+  font-size: 24px;
+  font-weight: var(--font-weight-normal);
+  line-height: 1.5;
+  text-align: left;
+  word-break: normal;
+  margin-bottom: 1;
+}
+
+.sobre-text p span {
+  font-weight: var(--font-weight-bold);
+}
+
+/* SEÇÃO GALERIA */
+#peoples-running {
+  padding: var(--padding-large) 0;
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* SEÇÃO INSPIRE-SE */
+#inspire-se {
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+}
+
+#inspire-se::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/runner-silhouette.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* SEÇÃO SERVIÇOS */
+#servicos {
+  padding: 50px 0;
+  color: #fff;
+}
+
+.servicos-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.servicos-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.servico-item {
+  text-align: center;
+}
+
+.servico-item img {
+  width: 50px;
+  margin-bottom: 15px;
+}
+
+.servico-item h3 {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 10px;
+}
+
+.servico-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: var(--font-weight-normal);
+}
+
+/* SEÇÃO FÁCIL ACESSO */
+#facil-acesso {
+  padding: 50px 0;
+  color: #fff;
+}
+
+.facil-acesso-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.facil-acesso-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.facil-acesso-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.facil-acesso-text ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.facil-acesso-image img {
+  width: 500px;
+  border-radius: 10px;
+}
+
+/* SEÇÃO CONQUISTE SEUS OBJETIVOS */
+#conquiste-objetivos {
+  padding: 50px 0;
+  color: #fff;
+}
+
+.objetivos-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.objetivos-image img {
+  width: 500px;
+  border-radius: 10px;
+}
+
+/* SEÇÃO DOWNLOAD */
+#cta {
+  padding: 50px 0;
+  background-color: #ff9900;
+  color: #000;
+  text-align: center;
+}
+
+#cta h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 120%;
+}
+
+#cta p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 150%;
+}
